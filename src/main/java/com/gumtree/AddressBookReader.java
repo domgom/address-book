@@ -18,6 +18,7 @@ import static com.gumtree.util.ImmutableListCollector.toImmutableList;
 public class AddressBookReader {
 
     private static final Logger LOG = LoggerFactory.getLogger(AddressBookReader.class);
+    private static final String SEPARATOR = "/";
 
     private AddressBookReader(){
     }
@@ -36,7 +37,7 @@ public class AddressBookReader {
     }
 
     private static Stream<String> getLines(String path) throws IOException, URISyntaxException {
-        return Files.lines(Paths.get(ClassLoader.getSystemResource(path).toURI()));
+        return Files.lines(Paths.get(AddressBookReader.class.getResource(SEPARATOR + path).toURI()));
     }
 
     public static class AddressBookNotFound extends RuntimeException {
