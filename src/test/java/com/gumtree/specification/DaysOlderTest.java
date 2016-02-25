@@ -9,7 +9,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
 
-import static com.gumtree.util.ImmutableListCollector.*;
+import static com.gumtree.util.ImmutableListCollector.toImmutableList;
 import static org.junit.Assert.assertEquals;
 
 /**
