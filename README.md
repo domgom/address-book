@@ -5,11 +5,11 @@ Code analysis can be done by **mvn sonar:sonar** assuming you have a local sonar
 (http://www.sonarqube.org/).
 
 ## Architectural & Design decissions
--I decided to use Spring Boot for convenience on running and pre-bundled dependencies.
+-I decided to use Spring Boot for convenience on running and pre-bundled dependencies. I'm not using Spring IoC capabilities because the classes are pretty small and object delegation / mocking is almost negible. For a bigger proyect and for the sake of improving testability I would go for the IoC approach because dependency inyection of objects is easier to test than static method calls. We also have to consider that the tests starting up a context are way more slow than plain junit tests.
 
 -I tried to make code readable, robust, tested and easy to mantain although sometimes was not the more direct solution.
 
--I decided to make two different searches in *DaysOlder.findContactByName()* because the code was more readable than using a single stream traverse despite of the performance impact.
+-I decided to make two different searches in *DaysOlder.findContactByName()* because the code was more readable than using a single stream traverse despite of the performance impact:
 ```
 contacts.stream().filter(c -> c.getName().startsWith(firstName) || c.getName().startsWith(secondName)).
                 limit(2).
