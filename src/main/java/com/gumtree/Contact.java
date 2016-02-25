@@ -42,6 +42,6 @@ public class Contact {
         return date;
     }
 
-    private class UnableToParseContactException extends RuntimeException{
+    public static class UnableToParseContactException extends RuntimeException{
     }
 }

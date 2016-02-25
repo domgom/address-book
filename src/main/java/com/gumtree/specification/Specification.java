@@ -5,6 +5,7 @@ import java.util.List;
 /**
  * Created by dgomez on 24/2/16.
  */
+
 @FunctionalInterface
 public interface Specification<T, U> {
 

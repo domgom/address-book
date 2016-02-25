@@ -28,7 +28,7 @@ public class AddressBookReader {
 
             return lines.map(Contact::new).collect(toImmutableList());
 
-        } catch (IOException | URISyntaxException e) {
+        } catch (IOException | URISyntaxException | NullPointerException e) {
 
             LOG.error("Address Book file not found", e);
             throw new AddressBookNotFound();
@@ -39,8 +39,7 @@ public class AddressBookReader {
         return Files.lines(Paths.get(ClassLoader.getSystemResource(path).toURI()));
     }
 
-    private static class AddressBookNotFound extends RuntimeException {
+    public static class AddressBookNotFound extends RuntimeException {
     }
-
 
 }

@@ -34,6 +34,6 @@ public class DaysOlder implements Specification<Contact, Long> {
     }
 
 
-    private class AbsentContactException extends RuntimeException {
+    private static class AbsentContactException extends RuntimeException {
     }
 }
