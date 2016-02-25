@@ -19,7 +19,7 @@ public class AddressBookApplication {
     private static final String ADDRESS_BOOK_FILE = "AddressBook";
     private static final int ERROR_STATUS = 1;
 
-    AddressBookApplication(){
+    AddressBookApplication() {
         //Needed for Spring Boot
     }
 
